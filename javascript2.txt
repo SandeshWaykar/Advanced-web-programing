@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="2.js"></script>
+</head>
+<body>
+    
+<div>
+    <button id="btnid" onclick="like()">like</button>
+    <button id="del"  onclick="unlike()">unlike</button>
+    <button onclick="commenthere()" >comment</button>
+</div>
+
+<div id="comment1"></div>
+
+  
+</body>
+</html>
+
+=================================================================================================
+
+
+2.js
+
+
+var likeCounter = 0;
+var commentCounter=0;
+
+function like(){
+    likeCounter++;
+    let likehere = document.querySelector("#btnid");
+    //likehere.innerHTML= `like${like1}`;
+    likehere.innerHTML= "like " + likeCounter;
+}
+
+ function unlike(){
+     if(likeCounter==0){
+         return;
+     }
+     likeCounter--;
+     document.querySelector("#btnid").innerHTML= "like "+ likeCounter;
+
+}
+function commenthere(){
+    
+    commentCounter++;
+ 
+    
+    let newelement= document.createElement("div");
+    newelement.style.display= "flex";
+    newelement.style.justifyContent= "space-between";
+    newelement.style.background = "royalblue";
+    newelement.style.margin= "10px";
+    
+
+    const child1= document.createElement("div");
+    child1.textContent=" commentting "+ commentCounter;
+    
+
+    const child2= document.createElement("button");
+    child2.innerHTML="delete";
+    
+
+    newelement.appendChild(child1);
+    newelement.appendChild(child2);
+    
+    const commentbox= document.querySelector("#comment1");
+    
+
+    commentbox.appendChild(newelement);
+}
+
+
+

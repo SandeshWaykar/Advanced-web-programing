@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="5.js"></script>
+</head>
+<body>
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+        <input type="text" name="" id="inputId1" placeholder="abe idhar bol"/>
+    </div>
+    
+<div>
+    <button id="btnid" onclick="like()">like</button>
+    <button id="del"  onclick="unlike()">unlike</button>
+    <button onclick="commentHere()" >comment</button>
+</div>
+
+<div id="commentbox">
+    <div id="copycomment" style="display:flex; justify-content: space-between; visibility: hidden;">
+        <div >commentting</div>
+        <button onclick="deleteit(this)">delete</button>
+
+    </div>
+</div>
+  
+</body>
+</html>
+
+=======================================================================================================================
+
+4.js
+
+var likeCounter = 0;
+var commentCounter=0;
+
+function like(){
+    likeCounter++;
+    let likehere = document.querySelector("#btnid");
+    //likehere.innerHTML= `like${like1}`;
+    likehere.innerHTML= "like " + likeCounter;
+}
+
+ function unlike(){
+     if(likeCounter==0){
+         return;
+     }
+     likeCounter--;
+     document.querySelector("#btnid").innerHTML= "like "+ likeCounter;
+
+}
+
+function commentHere() {
+    
+
+    let commentmade = document.querySelector("#inputId1").value;
+    
+    if(commentmade==""){
+        return;
+    }
+    
+
+    const newElement= document.querySelector("#copycomment").cloneNode(true);
+    newElement.style.visibility = "visible";
+    newElement.removeAttribute("id");
+    newElement.children[0].innerHTML = commentmade;
+
+    /*let newElement = document.querySelector("#copycomment").cloneNode(true);
+    newElement.removeAttribute("id"); //good practice to keep unique id.
+    newElement.style.visibility = "visible";
+    newElement.children[0].innerHTML = commentmade;*/
+   
+    
+
+    const commentbox = document.querySelector("#commentbox");
+    //commentbox.appendChild(newelement);
+    commentbox.insertBefore(newElement,commentbox.firstChild );
+
+    document.querySelector("#inputId1").value = "";
+    
+}
+
+function deleteit(btnElement){
+    btnElement.parentElement.remove();
+
+}
