@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .image1{
+            
+            background-image: url("1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image2{
+           
+            background: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image3{
+            background: url("icon1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            
+        }
+
+        .speaker {
+            background: #a0a0a0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            height:10vh;
+
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row sticky-top " style="height:15vh; align-items: center; background: rgb(3, 94, 82);">
+            <div class="col-2  " style=" display:flex; justify-content:flex-start; margin-left:1vw; font-weight: bolder; font-size:10vw; font-size:6vh; text-align: center; color:rgba(230, 247, 231, 0.993);">WhatsApp</div>
+            <div class="col-3 col-md-5"> </div>
+            <div class=" col col-md-2   image3" style=" display:flex; justify-content:flex-end;  height:90%; margin-left:22vw; "></div>
+            
+        </div>
+
+        <div class="row  justify-content-center image1 "  style="height:85vh; ">
+            
+            <div class="col-4 bg-danger rounded mr-1 mb-2 image2  " style="border:1px solid greenyellow  "></div>
+            <div class="col-4 bg-warning rounded mb-2 image2" style="border:1px solid greenyellow;"></div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
